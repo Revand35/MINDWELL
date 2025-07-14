@@ -57,7 +57,7 @@ Kami menyambut kontribusi dari komunitas untuk terus meningkatkan platform MindW
 
 ## Lisensi
 
-[Sesuaikan dengan lisensi yang digunakan]
+None
 
 ## Kontak
 
