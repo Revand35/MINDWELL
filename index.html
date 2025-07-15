@@ -795,6 +795,595 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+         #product {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #product::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .product-header {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .product-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            display: inline-block;
+        }
+
+        .product-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .product-subtitle {
+            font-size: 1.3rem;
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .product-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .product-item {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .product-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .product-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+        }
+
+        .product-icon-wrapper {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .product-item:hover .product-icon-wrapper {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        .product-icon {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .product-name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .product-description {
+            color: #7f8c8d;
+            margin-bottom: 25px;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .product-features li {
+            padding: 8px 0;
+            color: #5a6c7d;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .product-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .product-action {
+            text-align: center;
+        }
+
+        .product-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .product-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .product-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .product-title {
+                font-size: 2.5rem;
+            }
+            
+            .product-showcase {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .product-item {
+                padding: 30px;
+            }
+            
+            .product-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-title {
+                font-size: 2rem;
+            }
+            
+            .product-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .product-detail {
+            padding: 4rem 0;
+        }
+
+        .detail-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .detail-image {
+            position: relative;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .detail-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .app-mockup {
+            width: 280px;
+            height: 560px;
+            background: #1a1a1a;
+            border-radius: 30px;
+            border: 8px solid #000;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .app-mockup::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: #333;
+            border-radius: 2px;
+            z-index: 10;
+        }
+
+        .app-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        .app-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(102, 126, 234, 0.3), rgba(118, 75, 162, 0.3));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .app-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .app-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .app-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .detail-info {
+            padding: 3rem;
+        }
+
+        .detail-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .detail-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .star {
+            color: #ffc107;
+            font-weight: 600;
+        }
+
+        .rating-text {
+            color: #666;
+        }
+
+        .detail-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 12px;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 1.2rem;
+        }
+
+        .feature-text {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .detail-price {
+            margin-bottom: 2rem;
+        }
+
+        .price-main {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .price-sub {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .detail-description {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .description-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .description-text {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(102, 126, 234, 0.05);
+            border-radius: 16px;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #667eea;
+            display: block;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .detail-card {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .detail-image {
+                padding: 2rem 1rem;
+            }
+
+            .app-mockup {
+                width: 240px;
+                height: 480px;
+            }
+
+            .detail-info {
+                padding: 2rem;
+            }
+
+            .detail-title {
+                font-size: 2rem;
+            }
+
+            .detail-features {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .detail-card {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .feature-item {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+        }
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in:nth-child(1) { animation-delay: 0.1s; }
+        .fade-in:nth-child(2) { animation-delay: 0.2s; }
+        .fade-in:nth-child(3) { animation-delay: 0.3s; }
+        .fade-in:nth-child(4) { animation-delay: 0.4s; }
+
     </style>
 </head>
 <body>
@@ -807,14 +1396,10 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#product">Product</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#products">Products</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="nav-actions">
-                <button class="btn secondary-btn">Login</button>
-                <button class="btn primary-btn">Sign Up</button>
-            </div>
         </div>
     </nav>
 
@@ -845,245 +1430,6 @@
         </div>
     </section>
 
-    <section id="products" class="hero">
-        <div class="floating-element"></div>
-        <div class="floating-element"></div>
-        <div class="floating-element"></div>
-        
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Discover Our Mental Wellness Products</h1>
-                    <p>Comprehensive solutions designed to support your mental health journey with cutting-edge technology and proven methodologies</p>
-                    <div class="cta-buttons">
-                        <button class="btn primary-btn">Explore Products</button>
-                        <button class="btn secondary-btn">Free Trial</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Products Section -->
-    <section class="services">
-        <div class="container">
-            <h2 class="fade-in">Our Featured Products</h2>
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>MindWell Mobile App</h3>
-                    <p>Complete mental wellness companion with guided meditations, mood tracking, and personalized recommendations available on iOS and Android</p>
-                    <div class="hero-features">
-                        <li><i class="fas fa-check"></i> 1000+ Guided Sessions</li>
-                        <li><i class="fas fa-check"></i> Offline Access</li>
-                        <li><i class="fas fa-check"></i> Progress Tracking</li>
-                    </div>
-                    <a href="#" class="service-btn">Download Now</a>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-headphones"></i>
-                    </div>
-                    <h3>MindWell Audio Library</h3>
-                    <p>Premium collection of meditation tracks, sleep stories, and mindfulness exercises created by certified professionals</p>
-                    <div class="hero-features">
-                        <li><i class="fas fa-check"></i> 500+ Audio Tracks</li>
-                        <li><i class="fas fa-check"></i> Multiple Languages</li>
-                        <li><i class="fas fa-check"></i> HD Audio Quality</li>
-                    </div>
-                    <a href="#" class="service-btn">Subscribe</a>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>MindWell AI Coach</h3>
-                    <p>Intelligent personal wellness assistant that provides real-time guidance and personalized mental health insights</p>
-                    <div class="hero-features">
-                        <li><i class="fas fa-check"></i> 24/7 AI Support</li>
-                        <li><i class="fas fa-check"></i> Personalized Plans</li>
-                        <li><i class="fas fa-check"></i> Mood Analysis</li>
-                    </div>
-                    <a href="#" class="service-btn">Try AI Coach</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Product Categories -->
-    <section class="benefits">
-        <div class="container">
-            <h2 class="fade-in">Product Categories</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card fade-in">
-                    <div class="benefit-icon">
-                        <i class="fas fa-moon"></i>
-                    </div>
-                    <h3>Sleep & Relaxation</h3>
-                    <p>Products designed to improve sleep quality and promote deep relaxation through guided techniques</p>
-                </div>
-                <div class="benefit-card fade-in">
-                    <div class="benefit-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>Stress Management</h3>
-                    <p>Comprehensive tools and programs to help manage daily stress and build resilience</p>
-                </div>
-                <div class="benefit-card fade-in">
-                    <div class="benefit-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Relationship Wellness</h3>
-                    <p>Programs focused on improving communication, empathy, and healthy relationship dynamics</p>
-                </div>
-                <div class="benefit-card fade-in">
-                    <div class="benefit-icon">
-                        <i class="fas fa-target"></i>
-                    </div>
-                    <h3>Focus & Productivity</h3>
-                    <p>Tools to enhance concentration, mental clarity, and sustainable productivity habits</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Premium Products -->
-    <section class="about">
-        <div class="container">
-            <h2 class="fade-in">Premium Product Suite</h2>
-            <div class="about-content">
-                <div class="about-text fade-in">
-                    <p>Experience the full power of MindWell with our premium product suite. Designed for individuals and organizations seeking comprehensive mental wellness solutions with advanced features and priority support.</p>
-                    <p>Our premium offerings include exclusive content, advanced analytics, priority customer support, and access to live sessions with certified mental health professionals.</p>
-                </div>
-                <div class="about-features">
-                    <div class="feature-card fade-in">
-                        <i class="fas fa-crown"></i>
-                        <div>
-                            <h3>MindWell Pro</h3>
-                            <p>Advanced features with unlimited access to all content and premium support</p>
-                        </div>
-                    </div>
-                    <div class="feature-card fade-in">
-                        <i class="fas fa-building"></i>
-                        <div>
-                            <h3>MindWell Enterprise</h3>
-                            <p>Complete workplace wellness solution with team management and analytics</p>
-                        </div>
-                    </div>
-                    <div class="feature-card fade-in">
-                        <i class="fas fa-graduation-cap"></i>
-                        <div>
-                            <h3>MindWell Education</h3>
-                            <p>Specialized programs for educational institutions and student mental health</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Product Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="fade-in">What Users Say About Our Products</h2>
-            <div class="testimonials-slider">
-                <div class="testimonial-item fade-in">
-                    <div class="testimonial-content">
-                        <p>"The MindWell mobile app has become an essential part of my daily routine. The offline feature is perfect for my commute, and the progress tracking keeps me motivated."</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">
-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Alex">
-                            </div>
-                            <div class="author-info">
-                                <h4>Alex Chen</h4>
-                                <span>App User</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-item fade-in">
-                    <div class="testimonial-content">
-                        <p>"The AI Coach feature is incredibly intuitive. It feels like having a personal therapist available 24/7 who truly understands my needs and patterns."</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">
-                                <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&h=100&fit=crop&crop=face" alt="Maria">
-                            </div>
-                            <div class="author-info">
-                                <h4>Maria Santos</h4>
-                                <span>AI Coach User</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-item fade-in">
-                    <div class="testimonial-content">
-                        <p>"Our company implemented MindWell Enterprise and saw a 40% improvement in employee wellbeing scores. The team management features are outstanding."</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">
-                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face" alt="Robert">
-                            </div>
-                            <div class="author-info">
-                                <h4>Robert Johnson</h4>
-                                <span>HR Director</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section class="services">
-        <div class="container">
-            <h2 class="fade-in">Choose Your Plan</h2>
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-gift"></i>
-                    </div>
-                    <h3>Free Plan</h3>
-                    <p>Perfect for getting started with essential mental wellness tools and basic meditation sessions</p>
-                    <div class="hero-features">
-                        <li><i class="fas fa-check"></i> 50 Free Sessions</li>
-                        <li><i class="fas fa-check"></i> Basic Mood Tracking</li>
-                        <li><i class="fas fa-check"></i> Community Access</li>
-                    </div>
-                    <a href="#" class="service-btn">Start Free</a>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3>Premium Plan</h3>
-                    <p>Unlock full access to all features, content, and personalized wellness programs</p>
-                    <div class="hero-features">
-                        <li><i class="fas fa-check"></i> Unlimited Access</li>
-                        <li><i class="fas fa-check"></i> AI Coach</li>
-                        <li><i class="fas fa-check"></i> Priority Support</li>
-                    </div>
-                    <a href="#" class="service-btn">Upgrade Now</a>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-crown"></i>
-                    </div>
-                    <h3>Enterprise Plan</h3>
-                    <p>Comprehensive solution for organizations with advanced analytics and team management</p>
-                    <div class="hero-features">
-                        <li><i class="fas fa-check"></i> Team Dashboard</li>
-                        <li><i class="fas fa-check"></i> Custom Programs</li>
-                        <li><i class="fas fa-check"></i> Dedicated Support</li>
-                    </div>
-                    <a href="#" class="service-btn">Contact Sales</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Benefits Section -->
     <section class="benefits">
         <div class="container">
@@ -1102,13 +1448,6 @@
                     </div>
                     <h3>Privacy First</h3>
                     <p>Your data is always protected with end-to-end encryption and strict privacy policies</p>
-                </div>
-                <div class="benefit-card fade-in">
-                    <div class="benefit-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Community Support</h3>
-                    <p>Join our supportive community of wellness enthusiasts and certified professionals</p>
                 </div>
                 <div class="benefit-card fade-in">
                     <div class="benefit-icon">
@@ -1171,6 +1510,85 @@
             </div>
         </div>
     </section>
+
+    <section class="product-detail">
+            <div class="container">
+                <div class="detail-card">
+                    <div class="detail-image">
+                        <div class="app-mockup">
+                            <div class="app-screen">
+                                <video class="app-video" autoplay muted loop>
+                                    <source src="asset/0b13d4431d7a3d585375b986b9954345_720w.mp4" type="video/mp4">
+                                </video>
+                                <div class="app-overlay">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-info">
+                        <h1 class="detail-title">MindWell App</h1>
+                        <p class="detail-subtitle">Your daily mental wellness companion</p>
+                        <div class="detail-rating">
+                            <span class="star">⭐ 4.8</span>
+                            <span class="rating-text">(12,000+ reviews)</span>
+                        </div>
+
+                        <div class="stats">
+                            <div class="stat-item">
+                                <span class="stat-number">1000+</span>
+                                <span class="stat-label">Guided Meditations</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">50K+</span>
+                                <span class="stat-label">Active Users</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">4.8</span>
+                                <span class="stat-label">App Rating</span>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-features">
+                            <div class="feature-item">
+                                <span class="feature-icon">🧘</span>
+                                <span class="feature-text">Guided Meditations</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">📊</span>
+                                <span class="feature-text">Mood Tracking</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🤖</span>
+                                <span class="feature-text">AI-Powered Plans</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">📱</span>
+                                <span class="feature-text">Online Access</span>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-price">
+                            <span class="price-main">Free</span>
+                            <span class="price-sub">• Premium Available</span>
+                        </div>
+                        
+                        <a href="#" class="download-btn">
+                            <span>📥</span>
+                            Download App
+                        </a>
+                        
+                        <div class="detail-description">
+                            <h3 class="description-title">About This App</h3>
+                            <p class="description-text">
+                                MindWell Mobile App is your pocket-sized mental wellness partner. Whether you're battling stress, anxiety, or simply seeking inner peace, our app offers guided meditations, mood tracking, and smart wellness plans tailored to your unique needs — all in one place.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
     <!-- About Section -->
     <section id="about" class="about">
@@ -1241,6 +1659,91 @@
         </div>
     </section>
 
+    <!-- App Section -->
+    <section class="product">
+        <div class="container">
+            <div class="product-header">
+                <h2 class="product-title fade-in">Our App</h2>
+                <p class="product-subtitle fade-in">Discover our comprehensive suite of mental wellness tools designed to support your journey to better mental health</p>
+            </div>
+            
+            <div class="product-showcase">
+                <div class="product-item fade-in">
+                    <div class="product-icon-wrapper">
+                        <i class="fas fa-mobile-alt product-icon"></i>
+                    </div>
+                    <h3 class="product-name">MindWell Mobile App</h3>
+                    <p class="product-description">Your pocket-sized mental wellness companion with AI-powered personalization and offline capabilities.</p>
+                    <ul class="product-features">
+                        <li>1000+ guided meditations</li>
+                        <li>Daily mood tracking</li>
+                        <li>Personalized wellness plans</li>
+                        <li>Offline access to content</li>
+                        <li>Progress analytics</li>
+                    </ul>
+                    <div class="product-action">
+                        <a href="#" class="product-btn">Download Now</a>
+                    </div>
+                </div>
+
+                <div class="product-item fade-in">
+                    <div class="product-icon-wrapper">
+                        <i class="fas fa-desktop product-icon"></i>
+                    </div>
+                    <h3 class="product-name">MindWell Desktop Platform</h3>
+                    <p class="product-description">Professional-grade mental wellness platform with advanced features for serious practitioners and therapists.</p>
+                    <ul class="product-features">
+                        <li>Advanced analytics dashboard</li>
+                        <li>Multi-user management</li>
+                        <li>Custom program creation</li>
+                        <li>Integration with health records</li>
+                        <li>Professional consultation tools</li>
+                    </ul>
+                    <div class="product-action">
+                        <a href="#" class="product-btn">Try Free Trial</a>
+                    </div>
+                </div>
+
+                <div class="product-item fade-in">
+                    <div class="product-icon-wrapper">
+                        <i class="fas fa-users product-icon"></i>
+                    </div>
+                    <h3 class="product-name">MindWell Community</h3>
+                    <p class="product-description">Connect with like-minded individuals in a safe, supportive environment with expert moderation.</p>
+                    <ul class="product-features">
+                        <li>Peer support groups</li>
+                        <li>Expert-led discussions</li>
+                        <li>Anonymous sharing options</li>
+                        <li>Challenge and goal tracking</li>
+                        <li>24/7 crisis support</li>
+                    </ul>
+                    <div class="product-action">
+                        <a href="#" class="product-btn">Join Community</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-stats">
+                <div class="stat-item fade-in">
+                    <span class="stat-number">2M+</span>
+                    <span class="stat-label">Active Users</span>
+                </div>
+                <div class="stat-item fade-in">
+                    <span class="stat-number">5000+</span>
+                    <span class="stat-label">Audio Sessions</span>
+                </div>
+                <div class="stat-item fade-in">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">User Satisfaction</span>
+                </div>
+                <div class="stat-item fade-in">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Support Available</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
@@ -1298,6 +1801,7 @@
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
+                        <li><a href="#product">Product</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
