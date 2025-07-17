@@ -813,8 +813,8 @@
         .product-header {
             text-align: center;
             margin-bottom: 80px;
-            margin-top: 60px; /* Added top margin for spacing from navigation */
-            padding-top: 40px; /* Added padding for extra breathing room */
+            margin-top: 60px;
+            padding-top: 40px;
             position: relative;
             z-index: 2;
         }
@@ -846,7 +846,7 @@
             color: #7f8c8d;
             max-width: 600px;
             margin: 0 auto;
-            margin-top: 25px; /* Added top margin for spacing from title underline */
+            margin-top: 25px;
             line-height: 1.8;
         }
 
@@ -855,7 +855,7 @@
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 40px;
             margin-bottom: 80px;
-            margin-top: 60px; /* Added top margin for spacing from header */
+            margin-top: 60px;
             position: relative;
             z-index: 2;
         }
@@ -1378,3 +1378,337 @@
         .fade-in:nth-child(2) { animation-delay: 0.2s; }
         .fade-in:nth-child(3) { animation-delay: 0.3s; }
         .fade-in:nth-child(4) { animation-delay: 0.4s; }
+
+        /* Biofeedback Device Section */
+.biofeedback-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.biofeedback-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="90" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+    animation: float 20s infinite linear;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.biofeedback-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.biofeedback-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 24px;
+    padding: 60px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.biofeedback-card:hover {
+    transform: translateY(-5px);
+}
+
+.biofeedback-image {
+    position: relative;
+    text-align: center;
+}
+
+.biofeedback-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.biofeedback-image:hover img {
+    transform: scale(1.05);
+}
+
+.biofeedback-info {
+    padding: 20px 0;
+}
+
+.biofeedback-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #2d3748;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+}
+
+.biofeedback-subtitle {
+    font-size: 1.3rem;
+    color: #718096;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+.biofeedback-description {
+    margin-bottom: 40px;
+}
+
+.biofeedback-desc-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.biofeedback-desc-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+}
+
+.biofeedback-desc-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a5568;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+.biofeedback-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.biofeedback-features li {
+    font-size: 1.1rem;
+    color: #4a5568;
+    margin-bottom: 12px;
+    padding: 12px 20px;
+    background: rgba(102, 126, 234, 0.05);
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.biofeedback-features li:hover {
+    background: rgba(102, 126, 234, 0.1);
+    transform: translateX(5px);
+}
+
+.biofeedback-features li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 0 2px 2px 0;
+}
+
+.biofeedback-price {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    border-radius: 12px;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.main-price {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 5px;
+}
+
+.sub-price {
+    display: block;
+    font-size: 1rem;
+    color: #718096;
+    font-weight: 500;
+}
+
+.biofeedback-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.biofeedback-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.biofeedback-btn:hover::before {
+    left: 100%;
+}
+
+.biofeedback-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+.biofeedback-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .biofeedback-card {
+        padding: 40px;
+        gap: 40px;
+    }
+    
+    .biofeedback-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .biofeedback-section {
+        padding: 60px 0;
+    }
+    
+    .biofeedback-card {
+        grid-template-columns: 1fr;
+        padding: 30px;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .biofeedback-title {
+        font-size: 2rem;
+    }
+    
+    .biofeedback-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .biofeedback-desc-text {
+        text-align: left;
+    }
+    
+    .biofeedback-features li {
+        font-size: 1rem;
+    }
+    
+    .biofeedback-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .biofeedback-container {
+        padding: 0 15px;
+    }
+    
+    .biofeedback-card {
+        padding: 20px;
+        gap: 20px;
+    }
+    
+    .biofeedback-title {
+        font-size: 1.8rem;
+    }
+    
+    .biofeedback-desc-text {
+        font-size: 1rem;
+    }
+    
+    .biofeedback-features li {
+        font-size: 0.95rem;
+        padding: 10px 15px;
+    }
+}
+
+/* Animation for scroll reveal */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.biofeedback-card {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Pulse effect for the device image */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(102, 126, 234, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(102, 126, 234, 0);
+    }
+}
+
+.biofeedback-image::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    animation: pulse 3s infinite;
+    pointer-events: none;
+}
