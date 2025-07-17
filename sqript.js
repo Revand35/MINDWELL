@@ -256,3 +256,36 @@
                 document.body.style.opacity = '1';
             }, 100);
         });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('screen-video');
+            
+            if (video) {
+                video.loop = true;
+                video.muted = true;
+                video.autoplay = true;
+                video.addEventListener('ended', function() {
+                    video.currentTime = 0;
+                    video.play();
+                });
+                video.addEventListener('loadeddata', function() {
+                    video.play().catch(function(error) {
+                        console.log('Auto-play dicegah oleh browser:', error);
+                    });
+                });
+                video.addEventListener('timeupdate', function() {
+                    if (video.duration - video.currentTime < 0.1) {
+                        video.currentTime = 0;
+                    }
+                });
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            video.play().catch(e => console.log('Play failed:', e));
+                        }
+                    });
+                });
+                
+                observer.observe(video);
+            }
+        });
