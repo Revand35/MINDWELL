@@ -1686,20 +1686,6 @@
 .biofeedback-card {
     animation: fadeInUp 0.8s ease-out;
 }
-
-/* Pulse effect for the device image */
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.4);
-    }
-    70% {
-        box-shadow: 0 0 0 20px rgba(102, 126, 234, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(102, 126, 234, 0);
-    }
-}
-
 .biofeedback-image::after {
     content: '';
     position: absolute;
